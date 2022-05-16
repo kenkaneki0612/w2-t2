@@ -50,6 +50,7 @@ public class MovePlayer : MonoBehaviour
         targetWaypoint = waypoint[targetWaypointIndex];
     }
 
+    //implement_gizmos
     private void OnDrawGizmos()
     {
         for (int i = 0; i <= waypoint.Count; i++)
