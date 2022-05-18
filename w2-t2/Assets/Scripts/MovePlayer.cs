@@ -53,16 +53,15 @@ public class MovePlayer : MonoBehaviour
     //implement_gizmos
     private void OnDrawGizmos()
     {
-        for (int i = 0; i <= waypoint.Count; i++)
+        Gizmos.color = Color.black;
+
+        if (waypoint != null && waypoint.Count > 0)
         {
-            if (i < waypoint.Count - 1)
+            for (int i = 1; i < waypoint.Count; i++)
             {
-                if (waypoint.Count > 0)
-                {
-                    Gizmos.color = Color.black;
-                    Gizmos.DrawLine(waypoint[i].position, waypoint[i + 1].position);
-                }
+                Gizmos.DrawLine(waypoint[i - 1].position, waypoint[i].position);
             }
+            Gizmos.DrawLine(waypoint[0].position, waypoint[waypoint.Count - 1].position);
         }
     }
 }
